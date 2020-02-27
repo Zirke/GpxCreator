@@ -63,6 +63,7 @@ public class DatabaseConnector {
             String query = "select lat,lon from trajectorypoint where trajectory = "+trajectory;
             stmt = conn.createStatement();
             results = stmt.executeQuery(query);
+            closeConnection();
         }
 
         return results;
