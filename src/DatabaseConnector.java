@@ -57,10 +57,10 @@ public class DatabaseConnector {
         return false;
     }
 
-    public ResultSet yoloConnect() throws SQLException {
+    public ResultSet getSpecificTrajectory(int trajectory) throws SQLException {
         ResultSet results = null;
         if(connectToDatabase()){
-            String query = "select lat,lon from trajectorypoint where trajectory = 1284";
+            String query = "select lat,lon from trajectorypoint where trajectory = "+trajectory;
             stmt = conn.createStatement();
             results = stmt.executeQuery(query);
         }
